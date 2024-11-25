@@ -1,0 +1,81 @@
+/* Root Style */
+.root {
+    -fx-font-family: "Readex Pro";
+    -fx-background-color: white;
+    -fx-padding: 20px;
+}
+
+/* Sidebar */
+#sidebar {
+    -fx-background-color: linear-gradient(to bottom, #F7E8D5, #ECECEC); /* Light gradient for sidebar */
+    -fx-spacing: 20px;
+    -fx-alignment: TOP_CENTER;
+    -fx-padding: 20px 10px;
+    -fx-min-width: 250px;
+    -fx-pref-width: 250px;
+    -fx-border-radius: 25px; /* Rounded corners for the sidebar */
+    -fx-background-radius: 25px; /* Explicitly enforce rounded background */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 2, 2); /* Subtle shadow */
+}
+
+/* Navigation Tiles */
+#nav-item, #nav-item-logout {
+    -fx-spacing: 10px;
+    -fx-alignment: CENTER;
+    -fx-padding: 15px 10px;
+    -fx-background-color: linear-gradient(to bottom, #FFFFFF, #F9F9F9); /* Subtle gradient */
+    -fx-border-color: #E0E0E0; /* Soft border */
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-border-radius: 20px; /* Rounded corners for tiles */
+    -fx-background-radius: 20px; /* Ensure rounded background */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 5, 0, 1, 1); /* Slight shadow for elevation */
+    -fx-cursor: hand;
+    -fx-min-width: 200px;
+    -fx-pref-width: 200px;
+    -fx-max-width: 200px;
+    -fx-transition: all 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover Effect for Navigation Tiles */
+#nav-item:hover, #nav-item-logout:hover {
+    -fx-scale-x: 1.02; /* Slight scale-up effect */
+    -fx-scale-y: 1.02;
+    -fx-border-color: #CCCCCC; /* Darker border on hover */
+}
+
+/* Logout Tile Specific Styling */
+#nav-item-logout {
+    -fx-background-color: #FDECEA; /* Light red background */
+    -fx-border-color: #F5C6C6; /* Light red border */
+    -fx-border-radius: 20px; /* Matching rounded corners */
+    -fx-background-radius: 20px;
+}
+
+#nav-item-logout:hover {
+    -fx-background-color: linear-gradient(to bottom, #FADBD8, #F5B7B1); /* Darker red gradient on hover */
+    -fx-border-color: #E74C3C; /* Bold red border */
+}
+
+/* Tile Content: Icon */
+#nav-item ImageView, #nav-item-logout ImageView {
+    -fx-opacity: 0.8; /* Slight transparency for icons */
+    -fx-transition: opacity 0.3s ease; /* Smooth transition for hover */
+}
+
+#nav-item:hover ImageView, #nav-item-logout:hover ImageView {
+    -fx-opacity: 1; /* Full opacity on hover */
+}
+
+/* Tile Content: Text */
+#nav-item Text, #nav-item-logout Text {
+    -fx-font-size: 15px; /* Slightly larger font for better readability */
+    -fx-font-weight: bold;
+    -fx-fill: #4A4A4A; /* Dark gray text */
+}
+
+/* Logout Text */
+#nav-item-logout Text {
+    -fx-fill: #E74C3C; /* Red text for logout */
+}
+

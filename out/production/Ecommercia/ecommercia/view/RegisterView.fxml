@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21.0.5"
+            fx:controller="ecommercia.controller.RegisterController"
+            stylesheets="/resources/styles/register.css">
+
+    <children>
+        <!-- Main Layout -->
+        <VBox id="register-page">
+            <!-- Welcome Section -->
+            <VBox id="welcome-section">
+                <ImageView fx:id="logoImageView" fitHeight="150" fitWidth="150">
+                    <image>
+                        <Image url="@/resources/images/logo.png"/>
+                    </image>
+                </ImageView>
+                <Label text="Welcome to Ecommercia" id="welcome-title"/>
+                <Label text="Manage your business efficiently" id="welcome-subtitle"/>
+            </VBox>
+
+            <!-- Register Form -->
+            <VBox id="form-container">
+                <Label text="Create a new account" id="register-title"/>
+                <TextField fx:id="fullnameField" promptText="Enter your fullname" id="input-field"/>
+                <TextField fx:id="emailField" promptText="Enter your email" id="input-field"/>
+                <PasswordField fx:id="passwordField" promptText="Enter your password" id="input-field"/>
+
+                <Button text="Register" fx:id="registerButton" onAction="#handleRegister" id="register-button"/>
+
+
+                <HBox id="link-section">
+                    <Label text="Already have an account?"/>
+                    <Hyperlink text="Login" onAction="#handleLogin" id="link"/>
+                </HBox>
+
+                <Label fx:id="errorLabel" text="" id="error-message"/>
+            </VBox>
+        </VBox>
+    </children>
+</AnchorPane>

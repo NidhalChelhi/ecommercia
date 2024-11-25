@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="800" prefWidth="1200" xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/21.0.5" fx:controller="ecommercia.controller.DashboardController"
+            stylesheets="/resources/styles/sidebar.css">
+
+    <!-- Sidebar (Left) -->
+    <left>
+        <VBox id="sidebar">
+            <!-- Logo -->
+            <ImageView fx:id="logoImageView" fitHeight="120" fitWidth="120">
+                <image>
+                    <Image url="@/resources/images/logo.png"/>
+                </image>
+                <VBox.margin>
+                    <Insets top="20.0"/>
+                </VBox.margin>
+            </ImageView>
+
+            <VBox id="nav-item" onMouseClicked="#showProductsPage">
+                <ImageView fitHeight="24" fitWidth="24">
+                    <image>
+                        <Image url="@/resources/images/icons/products-icon.png"/>
+                    </image>
+                </ImageView>
+                <Text text="Manage Products"/>
+            </VBox>
+
+            <VBox id="nav-item" onMouseClicked="#showOrdersPage">
+                <ImageView fitHeight="24" fitWidth="24">
+                    <image>
+                        <Image url="@/resources/images/icons/orders-icon.png"/>
+                    </image>
+                </ImageView>
+                <Text text="Manage Orders"/>
+            </VBox>
+
+            <VBox id="nav-item" onMouseClicked="#showSuppliersPage">
+                <ImageView fitHeight="24" fitWidth="24">
+                    <image>
+                        <Image url="@/resources/images/icons/suppliers-icon.png"/>
+                    </image>
+                </ImageView>
+                <Text text="Manage Suppliers"/>
+            </VBox>
+
+            <VBox id="nav-item-logout" onMouseClicked="#handleLogout">
+                <ImageView fitHeight="24" fitWidth="24">
+                    <image>
+                        <Image url="@/resources/images/icons/logout-icon.png"/>
+                    </image>
+                </ImageView>
+                <Text text="Logout"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- Main Content Area (Center) -->
+    <center>
+        <AnchorPane fx:id="contentArea" id="main-content"/>
+    </center>
+</BorderPane>

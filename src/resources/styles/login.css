@@ -1,0 +1,100 @@
+/* Overall Page Styles */
+.root {
+    -fx-font-family: "Readex Pro";
+}
+
+#login-page {
+    -fx-background-color: linear-gradient(to bottom, #ECECEC, #F7E8D5);
+    -fx-alignment: CENTER;
+    -fx-padding: 40px;
+    -fx-spacing: 40px;
+}
+
+/* Welcome Section */
+#welcome-section {
+    -fx-alignment: CENTER;
+    -fx-spacing: 20px;
+}
+
+#welcome-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4A4A4A; /* Charcoal gray for clarity */
+}
+
+#welcome-subtitle {
+    -fx-font-size: 16px;
+    -fx-text-fill: #6F6F6F; /* Softer gray for subtitle */
+}
+
+/* Form Container */
+#form-container {
+    -fx-background-color: white;
+    -fx-alignment: CENTER;
+    -fx-spacing: 20px;
+    -fx-padding: 30px;
+    -fx-border-radius: 25px; /* More rounded corners */
+    -fx-background-radius: 25px; /* Explicitly enforce rounded background */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 2, 2);
+    -fx-min-width: 400px;
+}
+
+/* Login Title */
+#login-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4A4A4A;
+}
+
+/* Input Fields */
+#input-field {
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 15px; /* Rounded input fields */
+    -fx-background-radius: 15px; /* Explicitly enforce rounded background */
+    -fx-background-color: #FAFAFA;
+    -fx-max-width: 350px;
+}
+
+#input-field:focused {
+    -fx-border-color: #FFB347; /* Muted orange for focus */
+}
+
+/* Login Button */
+#login-button {
+    -fx-max-width: 350px;
+    -fx-background-color: #FFB347; /* Muted orange for CTA */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+    -fx-border-radius: 20px; /* Rounded button corners */
+    -fx-background-radius: 20px; /* Explicitly enforce rounded background */
+}
+
+#login-button:hover {
+    -fx-background-color: #FFA233; /* Slightly darker orange for hover */
+    -fx-cursor: hand;
+}
+
+/* Links Section */
+#link-section {
+    -fx-spacing: 10px;
+}
+
+#link {
+    -fx-text-fill: #5AB4AC; /* Muted teal for links */
+}
+
+#link:hover {
+    -fx-text-fill: #47998F; /* Darker teal on hover */
+    -fx-underline: true;
+}
+
+/* Error Message */
+#error-message {
+    -fx-text-fill: #E74C3C; /* Red for errors */
+    -fx-font-size: 12px;
+    -fx-wrap-text: true;
+    -fx-alignment: CENTER;
+}

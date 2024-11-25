@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21.0.5"
+            fx:controller="ecommercia.controller.ProductsController"
+            stylesheets="/resources/styles/products.css">
+    <children>
+        <!-- Main Layout -->
+        <VBox spacing="20" prefWidth="900" prefHeight="650" alignment="TOP_CENTER"
+              AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20" id="products-container">
+
+            <!-- Page Title -->
+            <Label text="Manage Products" id="page-title" />
+
+            <!-- Search Bar -->
+            <HBox spacing="10" alignment="CENTER" id="search-bar">
+                <TextField fx:id="searchField" promptText="Search by name or category..." id="search-field" />
+                <Button text="Search" onAction="#handleSearch" id="search-button">
+                    <graphic>
+                        <ImageView fitWidth="20" fitHeight="20">
+                            <image>
+                                <Image url="@/resources/images/icons/search-icon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+
+            <!-- Table Section -->
+            <VBox spacing="10" id="table-section">
+                <Label text="Products List" id="table-title" />
+                <TableView fx:id="productsTable" id="products-table">
+                    <columns>
+                        <TableColumn fx:id="idColumn" text="ID" prefWidth="80" />
+                        <TableColumn fx:id="nameColumn" text="Name" prefWidth="250" />
+                        <TableColumn fx:id="priceColumn" text="Price" prefWidth="120" />
+                        <TableColumn fx:id="categoryColumn" text="Category" prefWidth="200" />
+                        <TableColumn fx:id="stockColumn" text="Stock" prefWidth="100" />
+                    </columns>
+                    <placeholder>
+                        <Label text="No products available" id="table-placeholder" />
+                    </placeholder>
+                </TableView>
+            </VBox>
+
+            <!-- Action Buttons -->
+            <HBox spacing="20" alignment="CENTER" id="action-buttons">
+                <Button text="Add Product" onAction="#handleAddProduct" id="add-button">
+                    <graphic>
+                        <ImageView fitWidth="20" fitHeight="20">
+                            <image>
+                                <Image url="@/resources/images/icons/add-icon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button text="Edit Product" onAction="#handleEditProduct" id="edit-button">
+                    <graphic>
+                        <ImageView fitWidth="20" fitHeight="20">
+                            <image>
+                                <Image url="@/resources/images/icons/edit-icon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button text="Delete Product" onAction="#handleDeleteProduct" id="delete-button">
+                    <graphic>
+                        <ImageView fitWidth="20" fitHeight="20">
+                            <image>
+                                <Image url="@/resources/images/icons/delete-icon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>
