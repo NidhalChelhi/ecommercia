@@ -11,7 +11,7 @@
 
 <BorderPane prefHeight="800" prefWidth="1200" xmlns:fx="http://javafx.com/fxml/1"
             xmlns="http://javafx.com/javafx/21.0.5" fx:controller="ecommercia.controller.DashboardController"
-            stylesheets="/resources/styles/sidebar.css">
+            stylesheets="/resources/styles/dashboard.css">
 
     <!-- Sidebar (Left) -->
     <left>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/21.0.5"
+            fx:controller="ecommercia.controller.inventory.DiscountsController"
+            stylesheets="/resources/styles/inventory.css">
+    <children>
+        <VBox spacing="10" alignment="TOP_LEFT" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10"
+              AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+            <Label text="Manage Discounts" id="page-title" />
+
+            <ScrollPane fitToWidth="true" fitToHeight="true" id="table-scrollpane">
+                <TableView fx:id="discountsTable" prefHeight="400">
+                    <columns>
+                        <TableColumn fx:id="productColumn" text="Product" prefWidth="300" />
+                        <TableColumn fx:id="percentageColumn" text="Discount (%)" prefWidth="150" />
+                        <TableColumn fx:id="finalPriceColumn" text="Final Price (TND)" prefWidth="150" />
+                    </columns>
+                    <placeholder>
+                        <Label text="No discounts available" id="table-placeholder" />
+                    </placeholder>
+                </TableView>
+            </ScrollPane>
+
+            <HBox spacing="10" alignment="CENTER_LEFT" id="action-buttons">
+                <Button text="Add Discount" onAction="#handleAddDiscount" id="add-button">
+                    <graphic>
+                        <ImageView fitWidth="24" fitHeight="24">
+                            <image>
+                                <Image url="@/resources/images/icons/add-icon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button text="Edit Discount" onAction="#handleEditDiscount" id="edit-button">
+                    <graphic>
+                        <ImageView fitWidth="24" fitHeight="24">
+                            <image>
+                                <Image url="@/resources/images/icons/edit-icon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button text="Delete Discount" onAction="#handleDeleteDiscount" id="delete-button">
+                    <graphic>
+                        <ImageView fitWidth="24" fitHeight="24">
+                            <image>
+                                <Image url="@/resources/images/icons/delete-icon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

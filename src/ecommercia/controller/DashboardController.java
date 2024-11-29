@@ -12,12 +12,12 @@ public class DashboardController {
 
     public void initialize() {
         // Load the products view by default
-        NavigationUtil.loadContent("/ecommercia/view/ProductsView.fxml", contentArea);
+        NavigationUtil.loadContent("/ecommercia/view/inventory/InventoryView.fxml", contentArea);
     }
 
     @FXML
     private void showProductsPage() {
-        NavigationUtil.loadContent("/ecommercia/view/ProductsView.fxml", contentArea);
+        NavigationUtil.loadContent("/ecommercia/view/inventory/InventoryView.fxml", contentArea);
     }
 
     @FXML
@@ -38,6 +38,6 @@ public class DashboardController {
     @FXML
     private void handleLogout() {
         Stage currentStage = (Stage) contentArea.getScene().getWindow();
-        NavigationUtil.navigateTo("/ecommercia/view/LoginView.fxml", currentStage, "Ecommercia - Login");
+        NavigationUtil.navigateTo("/ecommercia/view/auth/LoginView.fxml", currentStage, "Ecommercia - Login");
     }
 }

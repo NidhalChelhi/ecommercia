@@ -69,7 +69,7 @@
 }
 
 #login-button:hover {
-    -fx-background-color: #FFA233; /* Slightly darker orange for hover */
+    -fx-background-color: #ffa233; /* Slightly darker orange for hover */
     -fx-cursor: hand;
 }
 

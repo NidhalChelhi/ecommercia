@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/21.0.5"
+            fx:controller="ecommercia.controller.inventory.AddDiscountController"
+            stylesheets="/resources/styles/popup.css">
+    <children>
+        <VBox spacing="20" alignment="CENTER" prefWidth="600" prefHeight="400"
+              AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20">
+            <Label text="Add New Discount" id="page-title" />
+
+            <!-- Form Section -->
+            <VBox spacing="15" alignment="CENTER" id="form-section">
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Product:" id="form-label" />
+                    <ComboBox fx:id="productComboBox" promptText="Select product" id="form-input" />
+                </VBox>
+
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Discount (%):" id="form-label" />
+                    <TextField fx:id="percentageField" promptText="Enter discount percentage" id="form-input" />
+                </VBox>
+            </VBox>
+
+            <!-- Action Buttons -->
+            <HBox spacing="20" alignment="CENTER" id="action-buttons">
+                <Button text="Add Discount" onAction="#handleAdd" id="primary-button" />
+                <Button text="Cancel" onAction="#handleCancel" id="secondary-button" />
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

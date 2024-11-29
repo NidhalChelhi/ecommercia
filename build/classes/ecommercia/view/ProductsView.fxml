@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21.0.5"
-            fx:controller="ecommercia.controller.ProductsController"
+            fx:controller="ecommercia.controller.inventory.InventoryController"
             stylesheets="/resources/styles/products.css">
     <children>
         <!-- Main Layout -->

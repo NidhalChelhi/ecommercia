@@ -7,7 +7,7 @@
 
 /* Sidebar */
 #sidebar {
-    -fx-background-color: linear-gradient(to bottom, #F7E8D5, #ECECEC); /* Light gradient for sidebar */
+    -fx-background-color: linear-gradient(to bottom, #eaf3fc, #dbe7f5); /* Light gradient for sidebar */
     -fx-spacing: 20px;
     -fx-alignment: TOP_CENTER;
     -fx-padding: 20px 10px;
@@ -34,7 +34,6 @@
     -fx-min-width: 200px;
     -fx-pref-width: 200px;
     -fx-max-width: 200px;
-    -fx-transition: all 0.3s ease; /* Smooth transitions */
 }
 
 /* Hover Effect for Navigation Tiles */
@@ -63,7 +62,6 @@
 /* Tile Content: Icon */
 #nav-item ImageView, #nav-item-logout ImageView {
     -fx-opacity: 0.8; /* Slight transparency for icons */
-    -fx-transition: opacity 0.3s ease; /* Smooth transition for hover */
 }
 
 #nav-item:hover ImageView, #nav-item-logout:hover ImageView {

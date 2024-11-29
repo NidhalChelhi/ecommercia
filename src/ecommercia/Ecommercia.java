@@ -14,7 +14,7 @@ public class Ecommercia extends Application {
     public void start(Stage stage) {
         try {
             // Load the LoginView.fxml
-            Parent root = FXMLLoader.load(getClass().getResource("/ecommercia/view/LoginView.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/ecommercia/view/auth/LoginView.fxml"));
 
             // Create the scene and set it on the stage
             Scene scene = new Scene(root);

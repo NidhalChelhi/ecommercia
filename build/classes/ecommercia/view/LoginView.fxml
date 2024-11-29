@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21.0.5"
-            fx:controller="ecommercia.controller.LoginController"
+            fx:controller="ecommercia.controller.auth.LoginController"
             stylesheets="/resources/styles/login.css">
 
     <children>
