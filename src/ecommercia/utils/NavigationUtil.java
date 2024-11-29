@@ -1,5 +1,6 @@
 package ecommercia.utils;
 
+import ecommercia.controller.DashboardController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -22,21 +23,53 @@ public class NavigationUtil {
             // Set the title of the stage
             stage.setTitle(title);
 
+            // Center the stage
+            centerStage(stage);
+
             // Show the stage
             stage.show();
-
-            // Dynamically center the stage
-            double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
-            double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
-            double stageWidth = stage.getWidth();
-            double stageHeight = stage.getHeight();
-
-            stage.setX((screenWidth - stageWidth) / 2);
-            stage.setY((screenHeight - stageHeight) / 2);
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println("Failed to load view: " + fxmlFile);
         }
+    }
+
+    // Navigate to a new stage with a user ID and title
+    public static void navigateToWithUser(String fxmlFile, Stage stage, String title, int userId) {
+        try {
+            FXMLLoader loader = new FXMLLoader(NavigationUtil.class.getResource(fxmlFile));
+            Parent root = loader.load();
+
+            DashboardController controller = loader.getController();
+            controller.setUserId(userId);
+
+            // Create a new scene and set it on the stage
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+
+            // Set the title of the stage
+            stage.setTitle(title);
+
+            // Center the stage
+            centerStage(stage);
+
+            // Show the stage
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Failed to navigate to: " + fxmlFile);
+        }
+    }
+
+    // Centers the stage on the screen
+    private static void centerStage(Stage stage) {
+        double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
+        double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
+        double stageWidth = stage.getWidth();
+        double stageHeight = stage.getHeight();
+
+        stage.setX((screenWidth - stageWidth) / 2);
+        stage.setY((screenHeight - stageHeight) / 2);
     }
 
     // Load content into a specific Pane (e.g., the center of a BorderPane)

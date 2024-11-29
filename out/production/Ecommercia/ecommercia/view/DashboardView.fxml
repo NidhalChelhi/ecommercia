@@ -17,24 +17,27 @@
     <left>
         <VBox id="sidebar">
             <!-- Logo -->
-            <ImageView fx:id="logoImageView" fitHeight="120" fitWidth="120">
+            <ImageView fx:id="logoImageView" fitHeight="80" fitWidth="80">
                 <image>
                     <Image url="@/resources/images/logo.png"/>
                 </image>
-                <VBox.margin>
-                    <Insets top="20.0"/>
-                </VBox.margin>
             </ImageView>
 
+            <!-- User Profile Section -->
+            <VBox id="user-profile" spacing="10" alignment="CENTER">
+                <ImageView fx:id="userAvatar" fitHeight="80" fitWidth="80" id="user-avatar"/>
+                <Text fx:id="userName" text="User Name" id="user-name"/>
+            </VBox>
+
+            <!-- Navigation Tiles -->
             <VBox id="nav-item" onMouseClicked="#showProductsPage">
                 <ImageView fitHeight="32" fitWidth="32">
                     <image>
-                        <Image url="@/resources/images/icons/filled/products-icon.png"/>
+                        <Image url="@/resources/images/icons/filled/inventory-icon.png"/>
                     </image>
                 </ImageView>
-                <Text text="Manage Products"/>
+                <Text text="Manage Inventory"/>
             </VBox>
-
 
             <VBox id="nav-item" onMouseClicked="#showClientsPage">
                 <ImageView fitHeight="32" fitWidth="32">

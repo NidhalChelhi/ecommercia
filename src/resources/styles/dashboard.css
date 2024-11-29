@@ -17,6 +17,20 @@
     -fx-background-radius: 25px; /* Explicitly enforce rounded background */
 }
 
+/* User Profile */
+#user-profile {
+    -fx-alignment: CENTER;
+    -fx-spacing: 10px;
+    -fx-padding: 20px 0;
+}
+
+
+#user-name {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-fill: #3A4F63; /* Neutral dark blue text */
+}
+
 /* Navigation Tiles */
 #nav-item, #nav-item-logout {
     -fx-spacing: 10px;

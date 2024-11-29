@@ -1,9 +1,13 @@
 package ecommercia.controller.auth;
 
+import ecommercia.controller.DashboardController;
 import ecommercia.utils.AlertUtility;
 import ecommercia.utils.DatabaseUtility;
 import ecommercia.utils.NavigationUtil;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -25,20 +29,25 @@ public class LoginController {
         String email = emailField.getText();
         String password = passwordField.getText();
 
-//        if (validateCredentials(email, password)) {
-        if (true) {
+        int userId = validateCredentials(email, password);
+        if (userId != -1) {
             System.out.println("Login successful!");
 
-            // Navigate to the dashboard
+            // Navigate to the dashboard with the user's ID
             Stage currentStage = (Stage) emailField.getScene().getWindow();
-            NavigationUtil.navigateTo("/ecommercia/view/DashboardView.fxml", currentStage, "Ecommercia - Dashboard");
+            NavigationUtil.navigateToWithUser(
+                    "/ecommercia/view/DashboardView.fxml",
+                    currentStage,
+                    "Ecommercia - Dashboard",
+                    userId
+            );
         } else {
             AlertUtility.showWarning("Login Failed", "Invalid email or password. Please try again.");
         }
     }
 
-    private boolean validateCredentials(String email, String password) {
-        String query = "SELECT * FROM users WHERE email = ? AND password = ?";
+    private int validateCredentials(String email, String password) {
+        String query = "SELECT id FROM users WHERE email = ? AND password = ?";
         try (Connection connection = DatabaseUtility.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
 
@@ -46,13 +55,15 @@ public class LoginController {
             statement.setString(2, password);
 
             try (ResultSet resultSet = statement.executeQuery()) {
-                return resultSet.next(); // Returns true if a match is found
+                if (resultSet.next()) {
+                    return resultSet.getInt("id"); // Return the user's ID if credentials are valid
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
             AlertUtility.showError("Database Error", "An error occurred while validating credentials.");
-            return false;
         }
+        return -1; // Return -1 if credentials are invalid
     }
 
     @FXML

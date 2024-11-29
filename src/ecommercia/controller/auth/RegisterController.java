@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class RegisterController {
 
@@ -29,7 +30,7 @@ public class RegisterController {
     @FXML
     private ImageView avatarImageView;
 
-    private String avatarPath = null; // Store the file path of the selected avatar image
+    private String avatarPath = null;
 
     @FXML
     private void handleRegister() {
@@ -37,7 +38,6 @@ public class RegisterController {
         String email = emailField.getText();
         String password = passwordField.getText();
 
-        // Validation
         if (fullname.isEmpty() || email.isEmpty() || password.isEmpty()) {
             AlertUtility.showWarning("Validation Error", "All fields are required.");
             return;
@@ -53,27 +53,37 @@ public class RegisterController {
             return;
         }
 
-        if (registerUser(fullname, email, password, avatarPath)) {
+        int userId = registerUser(fullname, email, password, avatarPath);
+        if (userId > 0) {
             AlertUtility.showInformation("Success", "Account created successfully!");
 
-            // Navigate to the dashboard after successful registration
+            // Navigate to the dashboard and pass the user ID
             Stage currentStage = (Stage) emailField.getScene().getWindow();
-            NavigationUtil.navigateTo("/ecommercia/view/DashboardView.fxml", currentStage, "Ecommercia - Dashboard");
+            NavigationUtil.navigateToWithUser(
+                    "/ecommercia/view/DashboardView.fxml",
+                    currentStage,
+                    "Ecommercia - Dashboard",
+                    userId
+            );
         }
     }
 
-    private boolean registerUser(String fullname, String email, String password, String avatarPath) {
+    private int registerUser(String fullname, String email, String password, String avatarPath) {
         String query = "INSERT INTO users (name, email, password, avatar) VALUES (?, ?, ?, ?)";
         try (Connection connection = DatabaseUtility.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query)) {
+             PreparedStatement statement = connection.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS)) {
 
             statement.setString(1, fullname);
             statement.setString(2, email);
-            statement.setString(3, password); // Consider encrypting the password
-            statement.setString(4, avatarPath); // Save the avatar path
-
+            statement.setString(3, password);
+            statement.setString(4, avatarPath);
             statement.executeUpdate();
-            return true;
+
+            // Get the generated user ID
+            ResultSet resultSet = statement.getGeneratedKeys();
+            if (resultSet.next()) {
+                return resultSet.getInt(1);
+            }
 
         } catch (Exception e) {
             if (e.getMessage().contains("UNIQUE constraint failed")) {
@@ -82,8 +92,8 @@ public class RegisterController {
                 e.printStackTrace();
                 AlertUtility.showError("Database Error", "Failed to create an account.");
             }
-            return false;
         }
+        return -1;
     }
 
     private boolean isValidEmail(String email) {
@@ -100,8 +110,8 @@ public class RegisterController {
 
         File file = fileChooser.showOpenDialog(null);
         if (file != null) {
-            avatarPath = file.getAbsolutePath(); // Save the file path
-            avatarImageView.setImage(new Image(file.toURI().toString())); // Display the image in the ImageView
+            avatarPath = file.getAbsolutePath();
+            avatarImageView.setImage(new Image(file.toURI().toString()));
         }
     }
 

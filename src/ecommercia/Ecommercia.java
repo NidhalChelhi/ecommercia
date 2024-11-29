@@ -20,27 +20,38 @@ public class Ecommercia extends Application {
             Scene scene = new Scene(root);
             stage.setScene(scene);
 
-            // Show the stage first to ensure its dimensions are calculated
+            // Add a listener to center the stage after it's shown and fully initialized
+            stage.setOnShown(event -> centerStage(stage));
+
+            // Set the title and icon
+            stage.setTitle("Ecommercia - Login");
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/images/icon.png")));
+
+            // Show the stage
             stage.show();
 
-            // Dynamically calculate and set the stage position to center it
-            double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
-            double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
-            double stageWidth = stage.getWidth();
-            double stageHeight = stage.getHeight();
-
-            stage.setX((screenWidth - stageWidth) / 2);
-            stage.setY((screenHeight - stageHeight) / 2);
-
-            // Set other stage properties
-            stage.setTitle("Ecommercia - Login");
-            stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/images/icon.png"))); // Optional icon
+            // Add a close request event
             stage.setOnCloseRequest(event -> System.out.println("Application is closing..."));
 
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println("Failed to load the login screen.");
         }
+    }
+
+    /**
+     * Centers the stage on the screen.
+     *
+     * @param stage The stage to be centered.
+     */
+    private void centerStage(Stage stage) {
+        double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
+        double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
+        double stageWidth = stage.getWidth();
+        double stageHeight = stage.getHeight();
+
+        stage.setX((screenWidth - stageWidth) / 2);
+        stage.setY((screenHeight - stageHeight) / 2);
     }
 
     public static void main(String[] args) {
