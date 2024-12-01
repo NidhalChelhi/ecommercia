@@ -20,7 +20,7 @@
                             <Image url="@/resources/images/icons/products-icon.png" />
                         </image>
                     </ImageView>
-                    <Text text="Products" />
+                    <Text text="Manage Products" />
                 </VBox>
                 <VBox id="nav-item" fx:id="categoriesTab" onMouseClicked="#showCategories">
                     <ImageView fitHeight="32" fitWidth="32">
@@ -28,7 +28,7 @@
                             <Image url="@/resources/images/icons/category-icon.png" />
                         </image>
                     </ImageView>
-                    <Text text="Categories" />
+                    <Text text="Manage Categories" />
                 </VBox>
                 <VBox id="nav-item" fx:id="discountsTab" onMouseClicked="#showDiscounts">
                     <ImageView fitHeight="32" fitWidth="32">
@@ -36,7 +36,17 @@
                             <Image url="@/resources/images/icons/discount-icon.png" />
                         </image>
                     </ImageView>
-                    <Text text="Discounts" />
+                    <Text text="Manage Discounts" />
+                </VBox>
+
+
+                <VBox id="nav-item" fx:id="chartsTab" onMouseClicked="#showCharts">
+                    <ImageView fitHeight="32" fitWidth="32">
+                        <image>
+                            <Image url="@/resources/images/icons/charts-icon.png" />
+                        </image>
+                    </ImageView>
+                    <Text text="View Charts" />
                 </VBox>
             </HBox>
 

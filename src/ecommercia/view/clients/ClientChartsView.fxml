@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/21.0.5"
+            fx:controller="ecommercia.controller.clients.ClientChartsController"
+            stylesheets="/resources/styles/inventory.css">
+    <children>
+        <VBox spacing="20" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10"
+              AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+            <!-- Title -->
+            <Label text="Client Charts" id="page-title"/>
+
+            <!-- Total Clients Label -->
+            <Label fx:id="totalClientsLabel" text="Total Clients: 0" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+
+            <!-- Pie Charts Section -->
+            <HBox spacing="20">
+                <!-- Client Type Pie Chart -->
+                <VBox spacing="10">
+                    <Label text="Client Distribution by Type" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                    <PieChart fx:id="clientTypePieChart" prefHeight="300"/>
+                </VBox>
+
+                <!-- Region Pie Chart -->
+                <VBox spacing="10">
+                    <Label text="Client Distribution by Region" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                    <PieChart fx:id="regionPieChart" prefHeight="300"/>
+                </VBox>
+            </HBox>
+
+            <!-- Age Group Distribution Label -->
+            <Label fx:id="ageGroupLabel" text="Age Group Distribution" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+
+            <!-- Bar Chart -->
+            <BarChart fx:id="ageGroupBarChart" title="Individual Clients by Age Group" animated="true" prefHeight="300">
+                <xAxis>
+                    <CategoryAxis fx:id="ageGroupCategoryAxis" label="Age Groups"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis fx:id="ageGroupNumberAxis" label="Number of Clients"/>
+                </yAxis>
+            </BarChart>
+        </VBox>
+    </children>
+</AnchorPane>

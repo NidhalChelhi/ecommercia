@@ -32,6 +32,11 @@ public class InventoryController {
         loadView("/ecommercia/view/inventory/DiscountsView.fxml");
     }
 
+    @FXML
+    private void showCharts() {
+        loadView("/ecommercia/view/inventory/ChartsView.fxml");
+    }
+
     private void loadView(String fxmlPath) {
         try {
             NavigationUtil.loadContent(fxmlPath, contentArea); // Use NavigationUtil

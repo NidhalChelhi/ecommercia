@@ -47,6 +47,7 @@ public class Ecommercia extends Application {
     private void centerStage(Stage stage) {
         double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
         double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
+
         double stageWidth = stage.getWidth();
         double stageHeight = stage.getHeight();
 

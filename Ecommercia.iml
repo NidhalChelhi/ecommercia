@@ -9,5 +9,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sqlite-jdbc-3.47.0.0" level="project" />
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="cmu_time_awb" level="project" />
+    <orderEntry type="library" name="voice-cmu-slt-hsmm-5.2" level="project" />
+    <orderEntry type="library" name="lib1" level="project" />
   </component>
 </module>

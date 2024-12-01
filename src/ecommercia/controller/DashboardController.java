@@ -104,7 +104,7 @@ public class DashboardController {
 
     @FXML
     private void showClientsPage() {
-        NavigationUtil.loadContent("/ecommercia/view/ClientsView.fxml", contentArea);
+        NavigationUtil.loadContent("/ecommercia/view/clients/ClientsView.fxml", contentArea);
     }
 
     @FXML

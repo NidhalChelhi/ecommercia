@@ -35,8 +35,8 @@
     -fx-background-radius: 12px;
     -fx-cursor: hand;
     -fx-min-width: 120px;
-    -fx-pref-width: 140px;
-    -fx-max-width: 150px;
+    -fx-pref-width: 160px;
+    -fx-max-width: 180px;
 }
 
 #nav-item:hover {
@@ -195,3 +195,18 @@ TableView {
 #search-field:focused {
     -fx-border-color: #4A90E2;
 }
+/* No Data Label */
+.no-data-label {
+    -fx-text-fill: #E74C3C; /* Red color */
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+/* Chart Styling */
+.chart-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3A4F63;
+}
+

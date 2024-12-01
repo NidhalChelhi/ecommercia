@@ -1,13 +1,10 @@
 package ecommercia.controller.auth;
 
-import ecommercia.controller.DashboardController;
 import ecommercia.utils.AlertUtility;
 import ecommercia.utils.DatabaseUtility;
 import ecommercia.utils.NavigationUtil;
+import ecommercia.utils.TextToSpeechUtility;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -24,6 +21,7 @@ public class LoginController {
     @FXML
     private PasswordField passwordField;
 
+
     @FXML
     private void handleLogin() {
         String email = emailField.getText();
@@ -31,9 +29,10 @@ public class LoginController {
 
         int userId = validateCredentials(email, password);
         if (userId != -1) {
-            System.out.println("Login successful!");
 
-            // Navigate to the dashboard with the user's ID
+            TextToSpeechUtility tts = new TextToSpeechUtility();
+            tts.playWelcomeAudioAsync(); // Play the welcome audio asynchronously
+
             Stage currentStage = (Stage) emailField.getScene().getWindow();
             NavigationUtil.navigateToWithUser(
                     "/ecommercia/view/DashboardView.fxml",
@@ -66,11 +65,12 @@ public class LoginController {
         return -1; // Return -1 if credentials are invalid
     }
 
+
     @FXML
     private void handleForgotPassword() {
         System.out.println("Forgot Password clicked!");
+        // TODO: Implement password recovery functionality
         AlertUtility.showInformation("Forgot Password", "Password recovery functionality is not implemented yet.");
-        // TODO: Add navigation or logic for password recovery
     }
 
     @FXML
