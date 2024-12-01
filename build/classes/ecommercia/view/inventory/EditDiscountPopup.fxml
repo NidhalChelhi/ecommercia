@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/21.0.5"
+            fx:controller="ecommercia.controller.inventory.EditDiscountController"
+            stylesheets="/resources/styles/popup.css">
+    <children>
+        <VBox spacing="20" alignment="CENTER" prefWidth="600" prefHeight="400" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20">
+            <Label text="Edit Discount" id="page-title" />
+
+            <VBox spacing="15" alignment="CENTER" id="form-section">
+                <!-- Product Name -->
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Product:" id="form-label" />
+                    <Label fx:id="productNameLabel"
+                           style="-fx-font-size: 14px; -fx-padding: 8; -fx-background-color: #FAFAFA; -fx-border-color: #CCCCCC; -fx-border-radius: 5; -fx-pref-width: 300;" />
+                </VBox>
+
+                <!-- Discount Percentage -->
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Discount (%):" id="form-label" />
+                    <TextField fx:id="percentageField" promptText="Enter discount percentage" id="form-input" />
+                </VBox>
+
+                <!-- Final Price -->
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Final Price (TND):" id="form-label" />
+                    <Label fx:id="finalPriceLabel"
+                           style="-fx-font-size: 14px; -fx-padding: 8; -fx-background-color: #FAFAFA; -fx-border-color: #CCCCCC; -fx-border-radius: 5; -fx-pref-width: 300;" />
+                </VBox>
+            </VBox>
+
+            <!-- Action Buttons -->
+            <HBox spacing="20" alignment="CENTER" id="action-buttons">
+                <Button text="Save" onAction="#handleUpdate" id="primary-button" />
+                <Button text="Cancel" onAction="#handleCancel" id="secondary-button" />
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

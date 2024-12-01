@@ -1,0 +1,140 @@
+/* Base Page Styles */
+.root {
+    -fx-font-family: "Readex Pro";
+}
+
+#auth-page {
+    -fx-background-color: linear-gradient(to bottom, #EAF3FC, #DCE7F5);
+    -fx-alignment: CENTER;
+    -fx-padding: 40px;
+    -fx-spacing: 40px;
+}
+
+/* Welcome Section */
+#welcome-section {
+    -fx-alignment: CENTER;
+    -fx-spacing: 20px;
+}
+
+#welcome-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3A4F63;
+}
+
+#welcome-subtitle {
+    -fx-font-size: 16px;
+    -fx-text-fill: #5C7080;
+}
+
+/* Form Container */
+#form-container {
+    -fx-background-color: white;
+    -fx-alignment: CENTER;
+    -fx-spacing: 20px;
+    -fx-padding: 30px;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+    -fx-min-width: 400px;
+}
+
+#form-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3A4F63;
+}
+
+/* Input Fields */
+#input-field {
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-background-color: #FAFAFA;
+    -fx-max-width: 350px;
+}
+
+#input-field:focused {
+    -fx-border-color: #4A90E2;
+}
+
+/* Buttons */
+#action-button {
+    -fx-max-width: 350px;
+    -fx-background-color: #4A90E2;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+    -fx-font-size: 16px;
+    -fx-alignment: CENTER;
+    -fx-cursor: hand;
+}
+
+#action-button:hover {
+    -fx-background-color: #357ABD;
+}
+
+#action-button:pressed {
+    -fx-background-color: #2C5A94;
+}
+
+/* Links Section */
+#link-section {
+    -fx-spacing: 10px;
+    -fx-alignment: CENTER;
+}
+
+#link {
+    -fx-text-fill: #4A90E2;
+}
+
+#link:hover {
+    -fx-text-fill: #357ABD;
+    -fx-underline: true;
+}
+
+/* Error Message */
+#error-message {
+    -fx-text-fill: #E74C3C;
+    -fx-font-size: 12px;
+    -fx-wrap-text: true;
+    -fx-alignment: CENTER;
+}
+
+/* Avatar and Upload (Register Only) */
+#avatar-preview {
+    -fx-background-color: #EEEEEE;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-padding: 10px;
+}
+
+#upload-avatar-button {
+    -fx-background-color: #4A90E2;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px; /* Adjust padding for spacing */
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-max-width: 200px;
+    -fx-alignment: CENTER_LEFT; /* Align text and icon properly */
+    -fx-cursor: hand;
+}
+
+#upload-avatar-button:hover {
+    -fx-background-color: #357ABD;
+}
+
+#upload-avatar-button:pressed {
+    -fx-background-color: #2C5A94;
+}
+
+/* Icon inside the button */
+#upload-avatar-button .graphic {
+    -fx-padding: 0 5px 0 0;
+}

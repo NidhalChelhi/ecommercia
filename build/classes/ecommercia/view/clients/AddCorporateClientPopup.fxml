@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/21.0.5"
+            fx:controller="ecommercia.controller.clients.AddCorporateClientController"
+            stylesheets="/resources/styles/popup.css">
+    <children>
+        <VBox spacing="20" alignment="CENTER" prefWidth="600" prefHeight="500" AnchorPane.topAnchor="20"
+              AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20">
+            <Label text="Add New Corporate Client" id="page-title"/>
+
+            <!-- Form Section -->
+            <VBox spacing="15" alignment="CENTER" id="form-section">
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Name:" id="form-label"/>
+                    <TextField fx:id="nameField" promptText="Enter client name" id="form-input"/>
+                </VBox>
+
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Email:" id="form-label"/>
+                    <TextField fx:id="emailField" promptText="Enter client email" id="form-input"/>
+                </VBox>
+
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Phone Number:" id="form-label"/>
+                    <TextField fx:id="phoneField" promptText="Enter client phone number" id="form-input"/>
+                </VBox>
+
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Company Name:" id="form-label"/>
+                    <TextField fx:id="companyNameField" promptText="Enter company name" id="form-input"/>
+                </VBox>
+
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Tax ID:" id="form-label"/>
+                    <TextField fx:id="taxIdField" promptText="Enter Tax ID" id="form-input"/>
+                </VBox>
+
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="City:" id="form-label"/>
+                    <TextField fx:id="cityField" promptText="Enter city" id="form-input"/>
+                </VBox>
+
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Region:" id="form-label"/>
+                    <TextField fx:id="regionField" promptText="Enter region" id="form-input"/>
+                </VBox>
+            </VBox>
+
+            <!-- Action Buttons -->
+            <HBox spacing="20" alignment="CENTER" id="action-buttons">
+                <Button text="Add Client" onAction="#handleAdd" id="primary-button"/>
+                <Button text="Cancel" onAction="#handleCancel" id="secondary-button"/>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

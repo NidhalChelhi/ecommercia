@@ -2,7 +2,7 @@ package ecommercia.controller.auth;
 
 import ecommercia.utils.AlertUtility;
 import ecommercia.utils.DatabaseUtility;
-import ecommercia.utils.NavigationUtil;
+import ecommercia.utils.NavigationUtility;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -59,7 +59,7 @@ public class RegisterController {
 
             // Navigate to the dashboard and pass the user ID
             Stage currentStage = (Stage) emailField.getScene().getWindow();
-            NavigationUtil.navigateToWithUser(
+            NavigationUtility.navigateToWithUser(
                     "/ecommercia/view/DashboardView.fxml",
                     currentStage,
                     "Ecommercia - Dashboard",
@@ -118,6 +118,6 @@ public class RegisterController {
     @FXML
     private void handleLogin() {
         Stage currentStage = (Stage) emailField.getScene().getWindow();
-        NavigationUtil.navigateTo("/ecommercia/view/auth/LoginView.fxml", currentStage, "Ecommercia - Login");
+        NavigationUtility.navigateTo("/ecommercia/view/auth/LoginView.fxml", currentStage, "Ecommercia - Login");
     }
 }

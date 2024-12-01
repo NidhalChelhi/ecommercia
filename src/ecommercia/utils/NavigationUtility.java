@@ -9,12 +9,12 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-public class NavigationUtil {
+public class NavigationUtility {
 
     // Navigate to a new stage with a specified title
     public static void navigateTo(String fxmlFile, Stage stage, String title) {
         try {
-            Parent root = FXMLLoader.load(NavigationUtil.class.getResource(fxmlFile));
+            Parent root = FXMLLoader.load(NavigationUtility.class.getResource(fxmlFile));
 
             // Create a new scene and set it on the stage
             Scene scene = new Scene(root);
@@ -37,7 +37,7 @@ public class NavigationUtil {
     // Navigate to a new stage with a user ID and title
     public static void navigateToWithUser(String fxmlFile, Stage stage, String title, int userId) {
         try {
-            FXMLLoader loader = new FXMLLoader(NavigationUtil.class.getResource(fxmlFile));
+            FXMLLoader loader = new FXMLLoader(NavigationUtility.class.getResource(fxmlFile));
             Parent root = loader.load();
 
             DashboardController controller = loader.getController();
@@ -75,7 +75,7 @@ public class NavigationUtil {
     // Load content into a specific Pane (e.g., the center of a BorderPane)
     public static void loadContent(String fxmlFile, Pane container) {
         try {
-            Parent content = FXMLLoader.load(NavigationUtil.class.getResource(fxmlFile));
+            Parent content = FXMLLoader.load(NavigationUtility.class.getResource(fxmlFile));
             container.getChildren().clear();
             container.getChildren().add(content);
 

@@ -2,8 +2,8 @@ package ecommercia.controller.auth;
 
 import ecommercia.utils.AlertUtility;
 import ecommercia.utils.DatabaseUtility;
-import ecommercia.utils.NavigationUtil;
-import ecommercia.utils.TextToSpeechUtility;
+import ecommercia.utils.NavigationUtility;
+import ecommercia.utils.AudioPlaybackUtility;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -30,11 +30,11 @@ public class LoginController {
         int userId = validateCredentials(email, password);
         if (userId != -1) {
 
-            TextToSpeechUtility tts = new TextToSpeechUtility();
-            tts.playWelcomeAudioAsync(); // Play the welcome audio asynchronously
+            AudioPlaybackUtility audioPlaybackUtility = new AudioPlaybackUtility();
+            audioPlaybackUtility.playWelcomeAudioAsync();
 
             Stage currentStage = (Stage) emailField.getScene().getWindow();
-            NavigationUtil.navigateToWithUser(
+            NavigationUtility.navigateToWithUser(
                     "/ecommercia/view/DashboardView.fxml",
                     currentStage,
                     "Ecommercia - Dashboard",
@@ -77,6 +77,6 @@ public class LoginController {
     private void handleSignUp() {
         System.out.println("Sign Up clicked!");
         Stage currentStage = (Stage) emailField.getScene().getWindow();
-        NavigationUtil.navigateTo("/ecommercia/view/auth/RegisterView.fxml", currentStage, "Ecommercia - Register");
+        NavigationUtility.navigateTo("/ecommercia/view/auth/RegisterView.fxml", currentStage, "Ecommercia - Register");
     }
 }

@@ -1,7 +1,7 @@
 package ecommercia.controller.clients;
 
 import ecommercia.utils.AlertUtility;
-import ecommercia.utils.NavigationUtil;
+import ecommercia.utils.NavigationUtility;
 import javafx.fxml.FXML;
 import javafx.scene.layout.StackPane;
 
@@ -35,7 +35,7 @@ public class ClientsController {
 
     private void loadView(String fxmlPath) {
         try {
-            NavigationUtil.loadContent(fxmlPath, contentArea); // Use NavigationUtil
+            NavigationUtility.loadContent(fxmlPath, contentArea); // Use NavigationUtil
         } catch (Exception e) {
             e.printStackTrace();
             AlertUtility.showError("Failed to Load View", "Could not load the requested view. Please try again.");

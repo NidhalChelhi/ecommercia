@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/21.0.5"
+            fx:controller="ecommercia.controller.inventory.ChartsController"
+            stylesheets="/resources/styles/inventory.css">
+    <children>
+        <VBox spacing="20" alignment="TOP_LEFT" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10"
+              AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+            <!-- Title -->
+            <Label text="Inventory Charts" id="page-title"/>
+
+            <!-- Total Products Label -->
+            <Label fx:id="totalProductsLabel" text="Total Products: 0" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+
+            <!-- Pie Chart -->
+            <PieChart fx:id="categoryPieChart" title="Products by Category" prefHeight="300"/>
+
+            <!-- Total Discounts Label -->
+            <Label fx:id="totalDiscountsLabel" text="Total Discounts Applied: 0" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+
+            <!-- Bar Chart -->
+            <BarChart fx:id="discountBarChart" title="Discount Distribution" animated="true" prefHeight="300">
+                <xAxis>
+                    <CategoryAxis fx:id="discountCategoryAxis" label="Discount Ranges"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis fx:id="discountNumberAxis" label="Number of Products"/>
+                </yAxis>
+            </BarChart>
+        </VBox>
+    </children>
+</AnchorPane>

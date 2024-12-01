@@ -1,0 +1,212 @@
+/* =========================== */
+/* Root Styles                 */
+/* =========================== */
+
+.root {
+    -fx-font-family: "Readex Pro";
+    -fx-font-size: 14px;
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 20px;
+}
+
+/* =========================== */
+/* Navigation Bar              */
+/* =========================== */
+
+#navigation-bar {
+    -fx-background-color: #EAF3FC;
+    -fx-padding: 10px;
+    -fx-spacing: 20px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-border-radius: 15px;
+    -fx-border-color: #DCE3E8;
+    -fx-background-radius: 15px;
+    -fx-border-width: 1px;
+}
+
+#nav-item {
+    -fx-spacing: 8px;
+    -fx-alignment: CENTER;
+    -fx-padding: 10px;
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #DCE3E8;
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-cursor: hand;
+    -fx-min-width: 120px;
+    -fx-pref-width: 160px;
+    -fx-max-width: 180px;
+}
+
+#nav-item:hover {
+    -fx-border-color: #B0C4DE;
+    -fx-background-color: #F5F9FC;
+}
+
+#nav-item:pressed {
+    -fx-border-color: #8DA4C6;
+    -fx-background-color: #D0E3FC;
+}
+
+#nav-item ImageView {
+    -fx-opacity: 0.8;
+}
+
+#nav-item:hover ImageView {
+    -fx-opacity: 1;
+}
+
+#nav-item Text {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-fill: #3A4F63;
+    -fx-text-alignment: CENTER;
+}
+
+/* =========================== */
+/* Content Area                */
+/* =========================== */
+
+#content-area {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 20px;
+    -fx-border-color: #DCE3E8;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+#placeholder-text {
+    -fx-font-size: 16px;
+    -fx-font-style: italic;
+    -fx-text-fill: #A0A0A0;
+    -fx-alignment: CENTER;
+}
+
+/* =========================== */
+/* Page Title                  */
+/* =========================== */
+
+#page-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3A4F63;
+    -fx-padding: 0 0 20px 0;
+}
+
+/* =========================== */
+/* Table Styles                */
+/* =========================== */
+
+#table-scrollpane {
+    -fx-background-color: transparent;
+}
+
+#table-scrollpane .viewport {
+    -fx-background-color: transparent;
+}
+
+TableView {
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+#table-placeholder {
+    -fx-font-size: 14px;
+    -fx-text-fill: #A0A0A0;
+}
+
+/* =========================== */
+/* Buttons                     */
+/* =========================== */
+
+#add-button,
+#edit-button,
+#delete-button,
+#search-button {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 15px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+#add-button {
+    -fx-background-color: #28A745;
+}
+
+#add-button:hover {
+    -fx-background-color: #218838;
+}
+
+#add-button:pressed {
+    -fx-background-color: #1E7E34;
+}
+
+#edit-button {
+    -fx-background-color: #FFC107;
+}
+
+#edit-button:hover {
+    -fx-background-color: #E0A800;
+}
+
+#edit-button:pressed {
+    -fx-background-color: #D39E00;
+}
+
+#delete-button {
+    -fx-background-color: #DC3545;
+}
+
+#delete-button:hover {
+    -fx-background-color: #C82333;
+}
+
+#delete-button:pressed {
+    -fx-background-color: #BD2130;
+}
+
+#search-button {
+    -fx-background-color: #4A90E2;
+}
+
+#search-button:hover {
+    -fx-background-color: #357ABD;
+}
+
+#search-button:pressed {
+    -fx-background-color: #2C5A94;
+}
+
+/* Search Field */
+#search-field {
+    -fx-font-size: 14px;
+    -fx-padding: 8px;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-background-color: #FAFAFA;
+    -fx-min-width: 300px;
+}
+
+#search-field:focused {
+    -fx-border-color: #4A90E2;
+}
+/* No Data Label */
+.no-data-label {
+    -fx-text-fill: #E74C3C; /* Red color */
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+/* Chart Styling */
+.chart-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3A4F63;
+}
+

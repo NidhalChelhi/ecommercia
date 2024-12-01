@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/21.0.5"
+            fx:controller="ecommercia.controller.clients.ClientsController"
+            stylesheets="/resources/styles/clients.css">
+    <children>
+        <VBox spacing="10" prefWidth="900" prefHeight="650"
+              AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+
+            <!-- Navigation Bar -->
+            <HBox id="navigation-bar" alignment="CENTER" spacing="20">
+                <VBox id="nav-item" fx:id="individualClientsTab" onMouseClicked="#showIndividualClients">
+                    <ImageView fitHeight="32" fitWidth="32">
+                        <image>
+                            <Image url="@/resources/images/icons/client-icon.png"/>
+                        </image>
+                    </ImageView>
+                    <Text text="Individual Clients"/>
+                </VBox>
+                <VBox id="nav-item" fx:id="corporateClientsTab" onMouseClicked="#showCorporateClients">
+                    <ImageView fitHeight="32" fitWidth="32">
+                        <image>
+                            <Image url="@/resources/images/icons/corporate-icon.png"/>
+                        </image>
+                    </ImageView>
+                    <Text text="Corporate Clients"/>
+                </VBox>
+
+                <VBox id="nav-item" fx:id="chartsTab" onMouseClicked="#showClientCharts">
+                    <ImageView fitHeight="32" fitWidth="32">
+                        <image>
+                            <Image url="@/resources/images/icons/charts-icon.png"/>
+                        </image>
+                    </ImageView>
+                    <Text text="View Charts"/>
+                </VBox>
+            </HBox>
+
+            <!-- Dynamic Content -->
+            <StackPane fx:id="contentArea" id="content-area">
+                <Label text="Select a tab to display content." id="placeholder-text"/>
+            </StackPane>
+        </VBox>
+    </children>
+</AnchorPane>

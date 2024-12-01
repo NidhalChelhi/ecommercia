@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/21.0.5"
+            fx:controller="ecommercia.controller.clients.CorporateClientsController"
+            stylesheets="/resources/styles/clients.css">
+    <VBox spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10"
+          AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+        <Label text="Manage Corporate Clients" id="page-title"/>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <TextField fx:id="searchField" promptText="Search by name..." id="search-field"/>
+            <Button text="Search" id="search-button">
+                <graphic>
+                    <ImageView fitWidth="24" fitHeight="24">
+                        <Image url="@/resources/images/icons/search-icon.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </HBox>
+
+        <ScrollPane fitToWidth="true" fitToHeight="true" id="table-scrollpane">
+            <TableView fx:id="corporateClientsTable" prefHeight="400">
+                <columns>
+                    <TableColumn text="Name" fx:id="nameColumn" prefWidth="150"/>
+                    <TableColumn text="Email" fx:id="emailColumn" prefWidth="200"/>
+                    <TableColumn text="Phone" fx:id="phoneColumn" prefWidth="120"/>
+                    <TableColumn text="Company Name" fx:id="companyColumn" prefWidth="200"/>
+                    <TableColumn text="Tax ID" fx:id="taxColumn" prefWidth="150"/>
+                    <TableColumn text="City" fx:id="cityColumn" prefWidth="150"/>
+                    <TableColumn text="Region" fx:id="regionColumn" prefWidth="150"/>
+                </columns>
+                <placeholder>
+                    <Label text="No Clients available" id="table-placeholder"/>
+                </placeholder>
+            </TableView>
+        </ScrollPane>
+
+        <HBox spacing="10" alignment="CENTER_LEFT" id="action-buttons">
+            <Button text="Add Client" onAction="#handleAddClient" id="add-button">
+                <graphic>
+                    <ImageView fitWidth="24" fitHeight="24">
+                        <Image url="@/resources/images/icons/add-icon.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button text="Edit Client" onAction="#handleEditClient" id="edit-button">
+                <graphic>
+                    <ImageView fitWidth="24" fitHeight="24">
+                        <Image url="@/resources/images/icons/edit-icon.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button text="Delete Client" onAction="#handleDeleteClient" id="delete-button">
+                <graphic>
+                    <ImageView fitWidth="24" fitHeight="24">
+                        <Image url="@/resources/images/icons/delete-icon.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </HBox>
+    </VBox>
+</AnchorPane>

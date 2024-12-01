@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/21.0.5"
+            fx:controller="ecommercia.controller.inventory.EditProductController" stylesheets="/resources/styles/popup.css">
+    <children>
+        <VBox spacing="20" alignment="CENTER" prefWidth="600" prefHeight="400" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20">
+            <Label text="Edit Product" id="page-title" />
+
+            <!-- Form Section -->
+            <VBox spacing="15" alignment="CENTER" id="form-section">
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Name:" id="form-label" />
+                    <TextField fx:id="nameField" promptText="Enter product name" id="form-input" />
+                </VBox>
+
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Price:" id="form-label" />
+                    <TextField fx:id="priceField" promptText="Enter product price" id="form-input" />
+                </VBox>
+
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Category:" id="form-label" />
+                    <ComboBox fx:id="categoryComboBox" promptText="Select category" id="form-input" />
+                </VBox>
+
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Stock:" id="form-label" />
+                    <TextField fx:id="stockField" promptText="Enter stock quantity" id="form-input" />
+                </VBox>
+            </VBox>
+
+            <!-- Action Buttons -->
+            <HBox spacing="20" alignment="CENTER" id="action-buttons">
+                <Button text="Save Changes" onAction="#handleSave" id="primary-button" />
+                <Button text="Cancel" onAction="#handleCancel" id="secondary-button" />
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

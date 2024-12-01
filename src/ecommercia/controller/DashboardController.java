@@ -1,7 +1,8 @@
 package ecommercia.controller;
 
+import ecommercia.utils.AudioPlaybackUtility;
 import ecommercia.utils.DatabaseUtility;
-import ecommercia.utils.NavigationUtil;
+import ecommercia.utils.NavigationUtility;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -34,7 +35,7 @@ public class DashboardController {
         makeImageCircular(userAvatar);
 
         // Load the products view by default
-        NavigationUtil.loadContent("/ecommercia/view/inventory/InventoryView.fxml", contentArea);
+        NavigationUtility.loadContent("/ecommercia/view/inventory/InventoryView.fxml", contentArea);
     }
 
     /**
@@ -99,27 +100,29 @@ public class DashboardController {
 
     @FXML
     private void showProductsPage() {
-        NavigationUtil.loadContent("/ecommercia/view/inventory/InventoryView.fxml", contentArea);
+        NavigationUtility.loadContent("/ecommercia/view/inventory/InventoryView.fxml", contentArea);
     }
 
     @FXML
     private void showClientsPage() {
-        NavigationUtil.loadContent("/ecommercia/view/clients/ClientsView.fxml", contentArea);
+        NavigationUtility.loadContent("/ecommercia/view/clients/ClientsView.fxml", contentArea);
     }
 
     @FXML
     private void showOrdersPage() {
-        NavigationUtil.loadContent("/ecommercia/view/OrdersView.fxml", contentArea);
+        NavigationUtility.loadContent("/ecommercia/view/OrdersView.fxml", contentArea);
     }
 
     @FXML
     private void showSuppliersPage() {
-        NavigationUtil.loadContent("/ecommercia/view/SuppliersView.fxml", contentArea);
+        NavigationUtility.loadContent("/ecommercia/view/SuppliersView.fxml", contentArea);
     }
 
     @FXML
     private void handleLogout() {
+        AudioPlaybackUtility audioPlaybackUtility = new AudioPlaybackUtility();
+        audioPlaybackUtility.playGoodbyeAudioAsync();
         Stage currentStage = (Stage) contentArea.getScene().getWindow();
-        NavigationUtil.navigateTo("/ecommercia/view/auth/LoginView.fxml", currentStage, "Ecommercia - Login");
+        NavigationUtility.navigateTo("/ecommercia/view/auth/LoginView.fxml", currentStage, "Ecommercia - Login");
     }
 }

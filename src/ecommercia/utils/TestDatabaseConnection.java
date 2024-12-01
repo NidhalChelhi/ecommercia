@@ -2,7 +2,7 @@ package ecommercia.utils;
 
 import java.sql.Connection;
 
-public class DatabaseConnectionTest {
+public class TestDatabaseConnection {
     public static void main(String[] args) {
         try (Connection connection = DatabaseUtility.getConnection()) {
             if (connection != null) {
