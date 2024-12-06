@@ -13,7 +13,7 @@ public class InventoryController {
 
     @FXML
     public void initialize() {
-        showProductsList(); // Set ProductsView as the default
+        showProductsList();
     }
 
 
@@ -39,7 +39,7 @@ public class InventoryController {
 
     private void loadView(String fxmlPath) {
         try {
-            NavigationUtility.loadContent(fxmlPath, contentArea); // Use NavigationUtil
+            NavigationUtility.loadContent(fxmlPath, contentArea);
         } catch (Exception e) {
             e.printStackTrace();
             AlertUtility.showError("Failed to Load View", "Could not load the requested view. Please try again.");

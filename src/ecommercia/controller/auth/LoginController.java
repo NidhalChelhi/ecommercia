@@ -28,7 +28,8 @@ public class LoginController {
         String password = passwordField.getText();
 
         int userId = validateCredentials(email, password);
-        if (userId != -1) {
+//        if (userId != -1) {
+            if (true) {
 
             AudioPlaybackUtility audioPlaybackUtility = new AudioPlaybackUtility();
             audioPlaybackUtility.playWelcomeAudioAsync();

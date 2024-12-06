@@ -28,8 +28,6 @@ public class EditDiscountController {
 
     public void setDiscount(Discount discount) {
         this.discount = discount;
-
-        // Set product name and initial percentage
         productNameLabel.setText(discount.getProduct().getName());
         percentageField.setText(String.valueOf(discount.getPercentage()));
         updateFinalPrice();
@@ -41,7 +39,6 @@ public class EditDiscountController {
 
     @FXML
     public void initialize() {
-        // Update final price dynamically as the percentage changes
         percentageField.textProperty().addListener((observable, oldValue, newValue) -> {
             try {
                 double percentage = Double.parseDouble(newValue);
@@ -74,12 +71,10 @@ public class EditDiscountController {
         try {
             double percentage = Double.parseDouble(percentageText);
 
-            // Validate percentage range
             if (percentage < 0 || percentage > 100) {
                 throw new NumberFormatException();
             }
 
-            // If percentage is 0, delete the discount instead of updating
             if (percentage == 0) {
                 deleteDiscountFromDatabase(discount.getProduct().getId());
                 if (onDiscountUpdated != null) {

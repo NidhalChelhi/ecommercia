@@ -6,40 +6,25 @@ import java.io.IOException;
 
 public class AudioPlaybackUtility {
 
-    /**
-     * Plays the welcome audio asynchronously.
-     */
     public void playWelcomeAudioAsync() {
         playAudioAsync("/resources/audio/welcome.wav");
     }
 
-    /**
-     * Plays the goodbye audio asynchronously.
-     */
     public void playGoodbyeAudioAsync() {
         playAudioAsync("/resources/audio/goodbye.wav");
     }
 
-    /**
-     * Generic method to play an audio file asynchronously.
-     *
-     * @param resourcePath Path to the audio file resource.
-     */
     private void playAudioAsync(String resourcePath) {
         new Thread(() -> {
             try {
-                // Load the file from the classpath
                 File audioFile = new File(getClass().getResource(resourcePath).toURI());
 
-                // Load the audio file as a clip
                 AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
                 Clip clip = AudioSystem.getClip();
                 clip.open(audioStream);
 
-                // Play the audio
                 clip.start();
 
-                // Wait for the audio to finish playing
                 while (!clip.isRunning()) {
                     Thread.sleep(10);
                 }

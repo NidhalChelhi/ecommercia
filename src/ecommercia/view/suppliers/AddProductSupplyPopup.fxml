@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/21.0.5"
+            fx:controller="ecommercia.controller.suppliers.AddProductSupplyController"
+            stylesheets="/resources/styles/popup.css">
+    <children>
+        <VBox spacing="20" alignment="CENTER" prefWidth="600" prefHeight="400" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20">
+            <Label text="Add New Product Supply" id="page-title"/>
+
+            <!-- Form Section -->
+            <VBox spacing="15" alignment="CENTER" id="form-section">
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Supplier:" id="form-label"/>
+                    <ComboBox fx:id="supplierComboBox" promptText="Select supplier" id="form-input"/>
+                </VBox>
+
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Product:" id="form-label"/>
+                    <ComboBox fx:id="productComboBox" promptText="Select product" id="form-input"/>
+                </VBox>
+
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Quantity:" id="form-label"/>
+                    <TextField fx:id="quantityField" promptText="Enter quantity" id="form-input"/>
+                </VBox>
+
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Supply Date:" id="form-label"/>
+                    <DatePicker fx:id="supplyDatePicker" promptText="Select supply date" id="form-input"/>
+                </VBox>
+            </VBox>
+
+            <!-- Action Buttons -->
+            <HBox spacing="20" alignment="CENTER" id="action-buttons">
+                <Button text="Add Supply" onAction="#handleAdd" id="primary-button"/>
+                <Button text="Cancel" onAction="#handleCancel" id="secondary-button"/>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

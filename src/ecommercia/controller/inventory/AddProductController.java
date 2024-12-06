@@ -31,7 +31,7 @@ public class AddProductController {
 
     private ObservableList<Category> categories;
 
-    private Consumer<Void> onProductAdded; // Callback for notifying ProductsController
+    private Consumer<Void> onProductAdded;
 
     public void setOnProductAdded(Consumer<Void> onProductAdded) {
         this.onProductAdded = onProductAdded;
@@ -91,7 +91,6 @@ public class AddProductController {
 
                 AlertUtility.showInformation("Success", "Product added successfully!");
 
-                // Notify the ProductsController to refresh the product list
                 if (onProductAdded != null) {
                     onProductAdded.accept(null);
                 }

@@ -33,7 +33,7 @@ public class EditProductController {
     private Product product;
     private ObservableList<Category> categories;
 
-    private Consumer<Void> onProductUpdated; // Callback for notifying ProductsController
+    private Consumer<Void> onProductUpdated;
 
     public void setProduct(Product product) {
         this.product = product;
@@ -108,7 +108,6 @@ public class EditProductController {
 
                 AlertUtility.showInformation("Success", "Product updated successfully!");
 
-                // Notify the ProductsController to refresh the product list
                 if (onProductUpdated != null) {
                     onProductUpdated.accept(null);
                 }

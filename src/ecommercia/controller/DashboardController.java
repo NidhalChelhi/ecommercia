@@ -27,30 +27,20 @@ public class DashboardController {
     @FXML
     private Text userName;
 
-    private int userId; // Store the ID of the logged-in user
+    private int userId;
 
     @FXML
     public void initialize() {
-        // Apply circular clipping to the avatar
         makeImageCircular(userAvatar);
 
-        // Load the products view by default
         NavigationUtility.loadContent("/ecommercia/view/inventory/InventoryView.fxml", contentArea);
     }
 
-    /**
-     * Sets the logged-in user's ID.
-     *
-     * @param userId The ID of the logged-in user.
-     */
     public void setUserId(int userId) {
         this.userId = userId;
         loadUserProfile();
     }
 
-    /**
-     * Loads the user's profile information and updates the sidebar.
-     */
     private void loadUserProfile() {
         String query = "SELECT name, avatar FROM users WHERE id = ?";
         try (Connection connection = DatabaseUtility.getConnection();
@@ -76,22 +66,11 @@ public class DashboardController {
         }
     }
 
-    /**
-     * Applies a circular clip to the given ImageView.
-     *
-     * @param imageView The ImageView to be clipped.
-     */
     private void makeImageCircular(ImageView imageView) {
         Circle circle = new Circle(imageView.getFitWidth() / 2, imageView.getFitHeight() / 2, Math.min(imageView.getFitWidth(), imageView.getFitHeight()) / 2);
         imageView.setClip(circle);
     }
 
-    /**
-     * Validates if the provided file path points to a valid image.
-     *
-     * @param filePath Path to the file to validate.
-     * @return true if the file is a valid image, false otherwise.
-     */
     private boolean isValidImage(String filePath) {
         if (filePath == null || filePath.isEmpty()) return false;
         File file = new File(filePath);
@@ -115,7 +94,7 @@ public class DashboardController {
 
     @FXML
     private void showSuppliersPage() {
-        NavigationUtility.loadContent("/ecommercia/view/SuppliersView.fxml", contentArea);
+        NavigationUtility.loadContent("/ecommercia/view/suppliers/SuppliersView.fxml", contentArea);
     }
 
     @FXML

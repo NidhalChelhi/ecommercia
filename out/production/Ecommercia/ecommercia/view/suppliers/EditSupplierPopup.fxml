@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/21.0.5"
+            fx:controller="ecommercia.controller.suppliers.EditSupplierController"
+            stylesheets="/resources/styles/popup.css">
+    <children>
+        <VBox spacing="20" alignment="CENTER" prefWidth="600" prefHeight="500" AnchorPane.topAnchor="20"
+              AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20">
+            <Label text="Edit Supplier" id="page-title"/>
+
+            <!-- Form Section -->
+            <VBox spacing="15" alignment="CENTER" id="form-section">
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Name:" id="form-label"/>
+                    <TextField fx:id="nameField" promptText="Enter supplier name" id="form-input"/>
+                </VBox>
+
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Email:" id="form-label"/>
+                    <TextField fx:id="emailField" promptText="Enter supplier email" id="form-input"/>
+                </VBox>
+
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Phone Number:" id="form-label"/>
+                    <TextField fx:id="phoneField" promptText="Enter supplier phone number" id="form-input"/>
+                </VBox>
+
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="City:" id="form-label"/>
+                    <TextField fx:id="cityField" promptText="Enter city" id="form-input"/>
+                </VBox>
+
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Region:" id="form-label"/>
+                    <TextField fx:id="regionField" promptText="Enter region" id="form-input"/>
+                </VBox>
+            </VBox>
+
+            <!-- Action Buttons -->
+            <HBox spacing="20" alignment="CENTER" id="action-buttons">
+                <Button text="Save Changes" onAction="#handleSave" id="primary-button"/>
+                <Button text="Cancel" onAction="#handleCancel" id="secondary-button"/>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

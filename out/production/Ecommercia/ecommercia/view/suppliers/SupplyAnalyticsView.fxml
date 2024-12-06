@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/21.0.5"
+            fx:controller="ecommercia.controller.suppliers.SupplyAnalyticsController"
+            stylesheets="/resources/styles/suppliers.css">
+    <children>
+        <VBox spacing="20" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10"
+              AnchorPane.bottomAnchor="10">
+            <!-- Title -->
+            <Label text="Supply Analytics" id="page-title"/>
+
+            <!-- Filters -->
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <DatePicker fx:id="startDatePicker" promptText="Start Date" id="form-input"/>
+                <DatePicker fx:id="endDatePicker" promptText="End Date" id="form-input"/>
+                <Button text="Filter" onAction="#handleFilter" id="filter-button"/>
+            </HBox>
+
+
+            <!-- Overview Section -->
+            <HBox spacing="30" alignment="CENTER">
+                <VBox alignment="CENTER">
+                    <Label text="Total Supplies" id="analytics-title"/>
+                    <Label fx:id="totalSuppliesLabel" text="0" id="analytics-value"/>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <Label text="Total Quantity" id="analytics-title"/>
+                    <Label fx:id="totalQuantityLabel" text="0" id="analytics-value"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="20">
+                <VBox spacing="20" alignment="CENTER">
+                    <Label text="Supply Analysis by Supplier" id="chart-title"/>
+                    <BarChart fx:id="supplierBarChart" title="Supplies by Supplier">
+                        <xAxis>
+                            <CategoryAxis fx:id="supplierAxis"/>
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis fx:id="quantityAxis"/>
+                        </yAxis>
+                    </BarChart>
+                </VBox>
+                <VBox spacing="20" alignment="CENTER">
+                    <Label text="Product Contribution to Supplies" id="chart-title"/>
+                    <PieChart fx:id="productPieChart"/>
+                </VBox>
+            </HBox>
+
+        </VBox>
+    </children>
+</AnchorPane>

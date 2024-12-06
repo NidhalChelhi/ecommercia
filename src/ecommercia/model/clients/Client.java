@@ -26,7 +26,6 @@ public abstract class Client {
         this.region = new SimpleStringProperty(region);
     }
 
-    // ID Getter and Setter
     public int getId() {
         return id.get();
     }
@@ -39,7 +38,6 @@ public abstract class Client {
         return id;
     }
 
-    // Name Getter and Setter
     public String getName() {
         return name.get();
     }
@@ -52,7 +50,6 @@ public abstract class Client {
         return name;
     }
 
-    // Email Getter and Setter
     public String getEmail() {
         return email.get();
     }
@@ -65,7 +62,6 @@ public abstract class Client {
         return email;
     }
 
-    // Phone Number Getter and Setter
     public String getPhoneNumber() {
         return phoneNumber.get();
     }
@@ -90,7 +86,6 @@ public abstract class Client {
         return city;
     }
 
-    // Region Getter and Setter
     public String getRegion() {
         return region.get();
     }
@@ -103,7 +98,6 @@ public abstract class Client {
         return region;
     }
 
-    // CreatedAt Getter and Setter
     public Timestamp getCreatedAt() {
         return createdAt;
     }
@@ -112,6 +106,5 @@ public abstract class Client {
         this.createdAt = createdAt;
     }
 
-    // Abstract Method
     public abstract String getClientType();
 }

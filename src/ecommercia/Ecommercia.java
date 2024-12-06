@@ -39,11 +39,6 @@ public class Ecommercia extends Application {
         }
     }
 
-    /**
-     * Centers the stage on the screen.
-     *
-     * @param stage The stage to be centered.
-     */
     private void centerStage(Stage stage) {
         double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
         double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();

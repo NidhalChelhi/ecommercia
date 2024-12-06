@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/21.0.5"
+            fx:controller="ecommercia.controller.suppliers.ManageSuppliersController"
+            stylesheets="/resources/styles/suppliers.css">
+    <children>
+        <VBox spacing="20" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+            <!-- Title -->
+            <Label text="Manage Suppliers" id="page-title"/>
+
+            <!-- Search Field -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <TextField fx:id="searchField" promptText="Search by name, city, or region..." id="search-field"/>
+            </HBox>
+
+            <!-- Suppliers Table -->
+            <TableView fx:id="suppliersTable" prefHeight="400">
+                <columns>
+                    <TableColumn text="Name" fx:id="nameColumn" prefWidth="200"/>
+                    <TableColumn text="Email" fx:id="emailColumn" prefWidth="200"/>
+                    <TableColumn text="Phone" fx:id="phoneColumn" prefWidth="150"/>
+                    <TableColumn text="City" fx:id="cityColumn" prefWidth="150"/>
+                    <TableColumn text="Region" fx:id="regionColumn" prefWidth="150"/>
+                </columns>
+                <placeholder>
+                    <Label text="No suppliers found" id="table-placeholder"/>
+                </placeholder>
+            </TableView>
+
+            <!-- Action Buttons -->
+            <HBox spacing="10" alignment="CENTER_LEFT" id="action-buttons">
+                <Button text="Add Supplier" onAction="#handleAddSupplier" id="add-button">
+                    <graphic>
+                        <ImageView fitWidth="24" fitHeight="24">
+                            <Image url="@/resources/images/icons/add-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button text="Edit Supplier" onAction="#handleEditSupplier" id="edit-button">
+                    <graphic>
+                        <ImageView fitWidth="24" fitHeight="24">
+                            <Image url="@/resources/images/icons/edit-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button text="Delete Supplier" onAction="#handleDeleteSupplier" id="delete-button">
+                    <graphic>
+                        <ImageView fitWidth="24" fitHeight="24">
+                            <Image url="@/resources/images/icons/delete-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -16,7 +16,6 @@ public class CorporateClient extends Client {
     }
 
 
-    // Getters and Setters for companyName
     public String getCompanyName() {
         return companyName.get();
     }
@@ -29,7 +28,6 @@ public class CorporateClient extends Client {
         return companyName;
     }
 
-    // Getters and Setters for taxId
     public String getTaxId() {
         return taxId.get();
     }

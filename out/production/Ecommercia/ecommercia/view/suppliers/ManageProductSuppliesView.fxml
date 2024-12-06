@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/21.0.5"
+            fx:controller="ecommercia.controller.suppliers.ProductSuppliesController"
+            stylesheets="/resources/styles/suppliers.css">
+    <children>
+        <VBox spacing="20" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+            <!-- Title -->
+            <Label text="Manage Product Supplies" id="page-title"/>
+
+            <!-- Search Fields -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <TextField fx:id="supplierFilterField" promptText="Filter by supplier name..." id="search-field"/>
+                <TextField fx:id="productFilterField" promptText="Filter by product name..." id="search-field"/>
+            </HBox>
+
+            <!-- Supplies Table -->
+            <TableView fx:id="suppliesTable" prefHeight="400">
+                <columns>
+                    <TableColumn text="Supplier Name" fx:id="supplierNameColumn" prefWidth="200"/>
+                    <TableColumn text="Product Name" fx:id="productNameColumn" prefWidth="200"/>
+                    <TableColumn text="Quantity" fx:id="quantityColumn" prefWidth="100"/>
+                    <TableColumn text="Supply Date" fx:id="supplyDateColumn" prefWidth="150"/>
+                </columns>
+                <placeholder>
+                    <Label text="No product supplies found" id="table-placeholder"/>
+                </placeholder>
+            </TableView>
+
+            <!-- Action Buttons -->
+            <HBox spacing="10" alignment="CENTER_LEFT" id="action-buttons">
+                <Button text="Add Supply" onAction="#handleAddSupply" id="add-button">
+                    <graphic>
+                        <ImageView fitWidth="24" fitHeight="24">
+                            <Image url="@/resources/images/icons/add-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button text="Delete Supply" onAction="#handleDeleteSupply" id="delete-button">
+                    <graphic>
+                        <ImageView fitWidth="24" fitHeight="24">
+                            <Image url="@/resources/images/icons/delete-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>
