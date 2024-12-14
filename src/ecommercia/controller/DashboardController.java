@@ -89,7 +89,7 @@ public class DashboardController {
 
     @FXML
     private void showOrdersPage() {
-        NavigationUtility.loadContent("/ecommercia/view/OrdersView.fxml", contentArea);
+        NavigationUtility.loadContent("/ecommercia/view/orders/OrdersView.fxml", contentArea);
     }
 
     @FXML

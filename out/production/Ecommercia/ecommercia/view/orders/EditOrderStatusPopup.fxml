@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/21.0.5"
+            fx:controller="ecommercia.controller.orders.EditOrderStatusController"
+            stylesheets="/resources/styles/popup.css">
+    <children>
+        <VBox spacing="20" alignment="CENTER" prefWidth="400" prefHeight="300" AnchorPane.topAnchor="20"
+              AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20">
+            <Label text="Edit Order Status" id="page-title"/>
+
+            <!-- Form Section -->
+            <VBox spacing="15" alignment="CENTER" id="form-section">
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Order ID:" id="form-label"/>
+                    <Label fx:id="orderIdLabel" id="form-value"/>
+                </VBox>
+
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Current Status:" id="form-label"/>
+                    <Label fx:id="currentStatusLabel" id="form-value"/>
+                </VBox>
+
+                <VBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="New Status:" id="form-label"/>
+                    <ComboBox fx:id="statusComboBox" promptText="Select new status" id="form-input"/>
+                </VBox>
+            </VBox>
+
+            <!-- Action Buttons -->
+            <HBox spacing="20" alignment="CENTER" id="action-buttons">
+                <Button text="Update" onAction="#handleUpdate" id="primary-button"/>
+                <Button text="Cancel" onAction="#handleCancel" id="secondary-button"/>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

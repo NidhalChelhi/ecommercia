@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/21.0.5"
+            fx:controller="ecommercia.controller.orders.OrderItemsPopupController"
+            stylesheets="/resources/styles/popup.css">
+    <children>
+        <VBox spacing="20" prefWidth="600" prefHeight="400" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10">
+            <!-- Title -->
+            <Label text="Order Items" id="popup-title"/>
+
+            <!-- Table for Order Items -->
+            <TableView fx:id="orderItemsTable" prefHeight="300">
+                <columns>
+                    <TableColumn text="Product Name" fx:id="productNameColumn" prefWidth="200"/>
+                    <TableColumn text="Quantity" fx:id="quantityColumn" prefWidth="100"/>
+                    <TableColumn text="Unit Price" fx:id="unitPriceColumn" prefWidth="150"/>
+                    <TableColumn text="Total Price" fx:id="totalPriceColumn" prefWidth="150"/>
+                </columns>
+                <placeholder>
+                    <Label text="No items found" id="table-placeholder"/>
+                </placeholder>
+            </TableView>
+
+            <!-- Close Button -->
+            <HBox alignment="CENTER">
+                <Button text="Close" onAction="#handleClose" id="close-button"/>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

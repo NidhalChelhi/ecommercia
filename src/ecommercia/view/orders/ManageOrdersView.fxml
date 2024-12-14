@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/21.0.5"
+            fx:controller="ecommercia.controller.orders.ManageOrdersController"
+            stylesheets="/resources/styles/orders.css">
+    <children>
+        <VBox spacing="20" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+            <!-- Title -->
+            <Label text="Manage Orders" id="page-title"/>
+
+            <!-- Search Field -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <TextField fx:id="searchField" promptText="Search by client, status, or date..." id="search-field"/>
+            </HBox>
+
+            <!-- Orders Table -->
+            <TableView fx:id="ordersTable" prefHeight="400">
+                <columns>
+                    <TableColumn text="Order ID" fx:id="idColumn" prefWidth="100"/>
+                    <TableColumn text="Client ID" fx:id="clientIdColumn" prefWidth="100"/>
+                    <TableColumn text="Order Date" fx:id="orderDateColumn" prefWidth="150"/>
+                    <TableColumn text="Status" fx:id="statusColumn" prefWidth="150"/>
+                    <TableColumn text="Payment Method" fx:id="paymentMethodColumn" prefWidth="150"/>
+                    <TableColumn text="Total Amount" fx:id="totalAmountColumn" prefWidth="150"/>
+                </columns>
+                <placeholder>
+                    <Label text="No orders found" id="table-placeholder"/>
+                </placeholder>
+            </TableView>
+
+            <!-- Action Buttons -->
+            <HBox spacing="10" alignment="CENTER_LEFT" id="action-buttons">
+                <Button text="Edit Status" onAction="#handleEditStatus" id="edit-button">
+                    <graphic>
+                        <ImageView fitWidth="24" fitHeight="24">
+                            <Image url="@/resources/images/icons/edit-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button text="View Items" onAction="#handleViewItems" id="search-button">
+                    <graphic>
+                        <ImageView fitWidth="24" fitHeight="24">
+                            <Image url="@/resources/images/icons/view-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+
+        </VBox>
+    </children>
+</AnchorPane>

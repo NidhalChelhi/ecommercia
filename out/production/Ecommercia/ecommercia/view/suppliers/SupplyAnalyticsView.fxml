@@ -4,6 +4,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/21.0.5"
             fx:controller="ecommercia.controller.suppliers.SupplyAnalyticsController"
             stylesheets="/resources/styles/suppliers.css">
@@ -17,7 +19,13 @@
             <HBox spacing="15" alignment="CENTER_LEFT">
                 <DatePicker fx:id="startDatePicker" promptText="Start Date" id="form-input"/>
                 <DatePicker fx:id="endDatePicker" promptText="End Date" id="form-input"/>
-                <Button text="Filter" onAction="#handleFilter" id="filter-button"/>
+                <Button text="Filter" onAction="#handleFilter" id="search-button">
+                    <graphic>
+                        <ImageView fitWidth="24" fitHeight="24">
+                            <Image url="@/resources/images/icons/filter-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
             </HBox>
 
 

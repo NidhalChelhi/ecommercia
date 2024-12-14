@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.text.Text?>
+<!--suppress ALL -->
+<AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/21.0.5"
+            fx:controller="ecommercia.controller.orders.OrdersController"
+            stylesheets="/resources/styles/orders.css">
+    <children>
+        <VBox spacing="10" prefWidth="900" prefHeight="650"
+              AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+
+            <!-- Navigation Bar -->
+            <HBox id="navigation-bar" alignment="CENTER" spacing="20">
+                <VBox id="nav-item" fx:id="manageOrdersTab" onMouseClicked="#showManageOrders">
+                    <ImageView fitHeight="32" fitWidth="32">
+                        <image>
+                            <Image url="@/resources/images/icons/orders-icon.png"/>
+                        </image>
+                    </ImageView>
+                    <Text text="Manage Orders"/>
+                </VBox>
+                <VBox id="nav-item" fx:id="analyticsTab" onMouseClicked="#showOrderAnalytics">
+                    <ImageView fitHeight="32" fitWidth="32">
+                        <image>
+                            <Image url="@/resources/images/icons/charts-icon.png"/>
+                        </image>
+                    </ImageView>
+                    <Text text="Order Analytics"/>
+                </VBox>
+            </HBox>
+
+            <!-- Dynamic Content -->
+            <StackPane fx:id="contentArea" id="content-area">
+                <Label text="Select a tab to display content." id="placeholder-text"/>
+            </StackPane>
+        </VBox>
+    </children>
+</AnchorPane>
